@@ -1,0 +1,390 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aswathy Venu Psychology</title>
+<meta name="description" content="Aswathy Venu, MSc Clinical Psychology, Consultant Psychologist. Counselling, CBT and mindfulness, child and adolescent guidance. Sessions in Malayalam and English.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fdf8f5;--paper:#fffdfb;--ink:#3a2f35;--soft:#7a6b72;--leaf:#4a6650;--sage:#a9c0a8;--rose:#e6a3b2;--blush:#f7e1e5;--gold:#d8b26a;--line:#efdfe0}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font:17px/1.7 "Nunito Sans",system-ui,sans-serif;overflow-x:hidden;padding-top:env(safe-area-inset-top,0)}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.1;color:var(--leaf)}
+h1{font-size:clamp(3rem,9vw,5.5rem)}h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:.6em}h3{font-size:1.6rem}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+section{padding:96px 0;position:relative}
+.note{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.3rem;color:var(--rose);margin-bottom:6px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(253,248,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:600;color:var(--leaf);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav ul a{text-decoration:none;font-size:.95rem;color:var(--soft)}nav ul a:hover{color:var(--leaf)}
+.btn{display:inline-block;background:var(--leaf);color:#fff;padding:12px 26px;border-radius:999px;text-decoration:none;border:0;font:600 .95rem "Nunito Sans",sans-serif;cursor:pointer;transition:background .2s}
+.btn:hover{background:#3a5240}.btn.ghost{background:transparent;color:var(--leaf);border:1.5px solid var(--sage)}.btn.ghost:hover{background:var(--blush)}
+@media(max-width:760px){nav ul{display:none}}
+/* hero */
+.hero{padding:90px 0 110px;text-align:center}
+.hero p.role{font-size:1.15rem;color:var(--soft)}
+.hero .tag{font-family:"Cormorant Garamond",serif;font-size:1.7rem;font-style:italic;margin:26px auto 32px;max-width:520px;color:var(--ink)}
+.hero .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.facts{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:56px;color:var(--soft);font-size:.95rem}
+.facts b{display:block;color:var(--leaf);font-size:1.05rem}
+.fl{position:absolute;pointer-events:none}
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+/* photos in flower-wreathed arch frames */
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.frame{position:relative;aspect-ratio:3/4}
+.frame:nth-child(2){margin-top:56px}
+.frame .ph{position:absolute;inset:16px;border-radius:999px 999px 20px 20px;overflow:hidden;border:5px solid var(--paper);box-shadow:0 10px 28px rgba(120,80,90,.14);background:var(--blush)}
+.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.frame .ring{position:absolute;inset:0;border:1.5px solid var(--rose);border-radius:999px 999px 30px 30px;opacity:.55}
+.frame .f{position:absolute;width:46px;height:46px;margin:-23px 0 0 -23px}
+.frame .s{position:absolute;width:30px;height:60px;margin:-30px 0 0 -15px;opacity:.9}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;padding:0;list-style:none}
+.chips li{background:var(--blush);color:var(--leaf);padding:6px 18px;border-radius:999px;font-size:.92rem}
+@media(max-width:760px){.about{grid-template-columns:1fr}.photos{max-width:460px;margin:0 auto}}
+/* lists */
+.tint{background:linear-gradient(var(--blush),var(--bg) 140%)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px 28px;list-style:none;padding:0}
+.grid li{padding:14px 0 14px 34px;border-bottom:1px solid var(--line);position:relative}
+.grid li::before{content:"";position:absolute;left:2px;top:22px;width:14px;height:14px;background:var(--rose);border-radius:50% 0 50% 50%;transform:rotate(45deg);opacity:.8}
+.grid small{display:block;color:var(--soft)}
+/* sessions */
+.slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:40px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px}
+.card h3{margin-bottom:4px}.card p{color:var(--soft)}
+.days{display:flex;gap:6px;margin-top:14px;font-size:.8rem;font-weight:600;color:var(--soft)}
+.days i{font-style:normal;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--blush)}
+.days i.on{background:var(--leaf);color:#fff}
+.book{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:36px}
+.step{margin:22px 0 8px;font-weight:600;color:var(--leaf)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills button{font:inherit;font-size:.92rem;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);cursor:pointer;color:var(--ink);transition:all .2s}
+.pills button:hover{border-color:var(--sage)}.pills button[aria-pressed=true]{background:var(--leaf);border-color:var(--leaf);color:#fff}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+label{font-size:.9rem;color:var(--soft);display:block}
+input,select{width:100%;margin-top:4px;padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);font:inherit;color:var(--ink)}
+input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--leaf);outline-offset:2px}
+.status{margin-top:18px;color:var(--soft);font-size:.95rem;min-height:1.6em}
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.contact .card b{display:block;font-size:1.1rem;word-break:break-word;margin:4px 0 14px}
+.contact .btns{display:flex;gap:8px;flex-wrap:wrap}.contact .btn{padding:9px 20px}
+footer{text-align:center;padding:48px 24px 80px;color:var(--soft);font-size:.92rem;border-top:1px solid var(--line)}
+footer p:first-child{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-style:italic;color:var(--leaf);margin-bottom:6px}
+/* experience, reviews, audio */
+.sample{display:inline-block;font:600 .7rem "Nunito Sans",sans-serif;background:var(--gold);color:#fff;padding:2px 10px;border-radius:999px;vertical-align:middle;margin-left:10px;letter-spacing:.04em}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:44px}
+.stat{text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px 12px}
+.stat b{display:block;font:600 2.5rem/1 "Cormorant Garamond",serif;color:var(--leaf);margin-bottom:6px}
+.stat span{color:var(--soft);font-size:.9rem}
+.tl{list-style:none;padding:0 0 0 22px;border-left:2px solid var(--sage);margin-left:8px}
+.tl li{position:relative;padding:0 0 28px 20px}
+.tl li::before{content:"";position:absolute;left:-30px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--rose);border:3px solid var(--bg)}
+.tl small{color:var(--rose);font-weight:600;letter-spacing:.04em}
+.tl h3{font-size:1.45rem;margin:2px 0}.tl p{color:var(--soft)}
+.revs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.rev .stars{color:var(--gold);letter-spacing:3px;margin-bottom:10px}
+.rev q{display:block;quotes:none;font:italic 500 1.3rem/1.45 "Cormorant Garamond",serif;color:var(--ink)}
+.rev .who{margin-top:16px;color:var(--soft);font-size:.92rem}.rev .who b{color:var(--leaf)}
+.revnote{margin-top:28px;color:var(--soft);font-size:.92rem;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.aud{display:flex;align-items:center;gap:14px;margin-top:26px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:10px 20px 10px 10px}
+.aud button{width:46px;height:46px;flex:none;border-radius:50%;border:0;background:var(--leaf);color:#fff;cursor:pointer;font-size:1rem}
+.aud button:disabled{opacity:.45;cursor:default}
+.aud .mid{flex:1;min-width:0}.aud .mid b{display:block;font-size:.95rem;color:var(--leaf);line-height:1.3}
+.aud .bar{height:6px;margin-top:6px;background:var(--blush);border-radius:99px;overflow:hidden;cursor:pointer}
+.aud .bar i{display:block;height:100%;width:0;background:var(--rose)}
+.aud small{color:var(--soft);white-space:nowrap}
+textarea{width:100%;margin-top:4px;padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);font:inherit;color:var(--ink);resize:vertical}
+textarea:focus{outline:2px solid var(--leaf);outline-offset:2px}
+label.chk{display:flex;gap:10px;align-items:flex-start;margin-top:14px}label.chk input{width:auto;margin-top:6px}
+#revform{margin-top:28px}
+/* the tree: grows as the page scrolls */
+#tree{position:fixed;left:-30px;bottom:0;width:min(340px,42vw);height:auto;z-index:0;pointer-events:none;opacity:.95}
+@media(max-width:900px){#tree{opacity:.45;left:-60px}}
+main,footer,nav{position:relative;z-index:1}
+#tree .grow{fill:none;stroke:#8a6b5a;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+#tree .b{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.2)}
+/* flowers bloom into view */
+.bloom{opacity:0;transform:scale(.3) rotate(-30deg);transition:opacity .9s ease,transform 1.2s cubic-bezier(.2,.9,.3,1.2)}
+.bloom.in{opacity:1;transform:none}
+.rise{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rise.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bloom,.rise{opacity:1;transform:none;transition:none}}
+/* mobile */
+@media(max-width:760px){
+ body{font-size:16px;line-height:1.65}
+ .wrap{padding:0 20px}
+ section{padding:56px 0}
+ nav .wrap{height:58px}
+ .logo{font-size:1.35rem}
+ nav .btn{padding:9px 18px;font-size:.88rem}
+ .hero{padding:48px 0 64px}
+ h1{font-size:clamp(2.8rem,15vw,3.6rem)}
+ .hero p.role{font-size:1rem;padding:0 8px}
+ .hero .tag{font-size:1.4rem;margin:20px auto 26px;padding:0 8px}
+ .hero .btns{flex-direction:column;align-items:stretch;max-width:320px;margin:0 auto}
+ .hero .btns .btn{text-align:center;padding:14px 26px}
+ .hero .fl:nth-of-type(1){left:-14px;top:14px;width:64px!important;opacity:.8}
+ .hero .fl:nth-of-type(2){right:-10px;top:60px;width:48px!important;opacity:.8}
+ .hero .fl:nth-of-type(3){display:none}
+ .facts{flex-direction:column;gap:14px;margin-top:40px}
+ .about{gap:36px}
+ .photos{gap:14px;max-width:420px;width:100%;padding:0 6px}
+ .frame:nth-child(2){margin-top:36px}
+ .frame .ph{inset:12px;border-width:4px}
+ .frame .f{transform:scale(.75)}
+ .about h2{font-size:2rem}
+ .chips{gap:8px}
+ .chips li{padding:5px 14px;font-size:.88rem}
+ h2{margin-bottom:.5em}
+ .grid{gap:0 20px}
+ .grid li{padding:12px 0 12px 30px}
+ .grid li::before{top:19px}
+ .slots{gap:16px;margin-bottom:28px}
+ .card{padding:22px;border-radius:18px}
+ .book{padding:22px 18px;border-radius:22px}
+ .pills{gap:8px}
+ .pills button{padding:10px 14px;font-size:.9rem;min-height:42px}
+ #times.pills button{flex:1 1 100%;text-align:center}
+ .fields{grid-template-columns:1fr;gap:14px}
+ input,select{font-size:16px;padding:12px 14px}
+ .book>div[style*=flex]{flex-direction:column}
+ .book>div[style*=flex] .btn{width:100%;text-align:center;padding:14px}
+ .contact{gap:14px}
+ .contact .btns .btn{flex:1;text-align:center}
+ footer{padding:36px 20px calc(60px + env(safe-area-inset-bottom,0px))}
+ #tree{width:150px;left:-36px;opacity:.28}
+}
+@media(max-width:380px){.photos{gap:10px}.facts b{font-size:1rem}}
+</style><style>
+:root{--bg:#faf7ee;--paper:#fffdf7;--ink:#303e30;--soft:#596250;--leaf:#314f39;--line:#d8d8c7;--blush:#ede8d9}
+body{background:var(--bg)}.wrap{max-width:1190px;padding-inline:clamp(20px,5vw,72px)}nav{background:#faf7eef5}nav .wrap{height:76px}.logo{font-family:Georgia,serif;font-weight:normal}.btn{border-radius:5px}.hero{padding:clamp(35px,6vw,85px) 0;text-align:left;background:#f6f1e4}.editorial{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:7%}.eyebrow{letter-spacing:.16em;font-size:.82rem;font-weight:700}.intro h1{font:normal clamp(4.2rem,7vw,7rem)/.94 "Cormorant Garamond",Georgia,serif;letter-spacing:-.055em;margin:23px 0}.intro em{color:#687950;font-weight:normal}.lead{max-width:410px;font-size:1.08rem;line-height:1.65}.actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:28px}.more{color:var(--leaf);text-underline-offset:5px}.cover{margin:0}.cover img,.aboutphoto img{display:block;width:100%;object-fit:cover}.cover img{aspect-ratio:1/1.06;border-radius:48% 48% 8px 8px;object-position:50% 62%}.cover figcaption{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font:italic 1.25rem Georgia,serif}.cover figcaption span{font:normal .85rem Arial,sans-serif}.aboutphoto img{max-height:495px;object-position:50% 75%;border-radius:6px}.tint{background:#edf0e4}.aud,#anote,#tree{display:none}.rise{opacity:1;transform:none}section{scroll-margin-top:68px}
+@media(max-width:700px){.editorial{grid-template-columns:1fr;gap:30px}.cover{max-width:420px}.cover img{aspect-ratio:1.18}.hero{padding:42px 0 30px}.intro h1{font-size:4.5rem}.actions{margin-top:20px}nav .wrap{height:62px}.aboutphoto img{max-height:370px}}
+</style>
+<style>[hidden]{display:none!important}</style><style>
+.hero{overflow:hidden;background:radial-gradient(ellipse at 89% 30%,#e2e7d3 0,transparent 49%),radial-gradient(ellipse at 10% 95%,#f3dfc8 0,transparent 44%),#f9f4e9}
+.cover{position:relative;isolation:isolate}
+.cover:before{content:"";position:absolute;z-index:-1;inset:-9px -9px 42px 9px;border:1px solid #9ba488;border-radius:49% 49% 9px 9px;pointer-events:none}
+.cover img{box-shadow:0 16px 40px -30px #39472c}
+.grid li:before{background:#829575}
+:focus-visible{outline:3px solid #51724d;outline-offset:4px}
+@keyframes settle{from{opacity:.35;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes portraitArrival{from{opacity:.5;transform:translateY(8px) rotate(.7deg)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:no-preference){
+.intro h1,.intro .lead,.intro .actions{animation:settle .85s ease-out backwards}
+.intro .lead{animation-delay:.1s}.intro .actions{animation-delay:.18s}
+.cover{animation:portraitArrival 1.25s ease-out both}
+.rise.in{animation:settle .75s ease-out}
+.btn{transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+@media(hover:hover){.btn:hover{transform:translateY(-2px);box-shadow:0 5px 14px #354a3624}}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style><style>#book form p{margin:15px 0}#book form input:not([type=checkbox]),#book form select{display:block;width:100%;max-width:32rem;padding:.7rem;font:inherit}#book .errorlist{color:#932e27}</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="flower" viewBox="-50 -50 100 100">
+   <g fill="#e6a3b2"><ellipse rx="13" ry="24" cy="-20"/><ellipse rx="13" ry="24" cy="-20" transform="rotate(72)"/><ellipse rx="13" ry="24" cy="-20" transform="rotate(144)"/><ellipse rx="13" ry="24" cy="-20" transform="rotate(216)"/><ellipse rx="13" ry="24" cy="-20" transform="rotate(288)"/></g>
+   <g fill="#f7e1e5" opacity=".7"><ellipse rx="5" ry="14" cy="-22"/><ellipse rx="5" ry="14" cy="-22" transform="rotate(72)"/><ellipse rx="5" ry="14" cy="-22" transform="rotate(144)"/><ellipse rx="5" ry="14" cy="-22" transform="rotate(216)"/><ellipse rx="5" ry="14" cy="-22" transform="rotate(288)"/></g>
+   <circle r="7" fill="#d8b26a"/>
+  </symbol>
+  <symbol id="daisy" viewBox="-50 -50 100 100">
+   <g fill="#fffdfb" stroke="#efdfe0" stroke-width="1.5"><ellipse rx="6" ry="22" cy="-24"/><ellipse rx="6" ry="22" cy="-24" transform="rotate(30)"/><ellipse rx="6" ry="22" cy="-24" transform="rotate(60)"/><ellipse rx="6" ry="22" cy="-24" transform="rotate(90)"/><ellipse rx="6" ry="22" cy="-24" transform="rotate(120)"/><ellipse rx="6" ry="22" cy="-24" transform="rotate(150)"/><ellipse rx="6" ry="22" cy="-24" transform="rotate(180)"/><ellipse rx="6" ry="22" cy="-24" transform="rotate(210)"/><ellipse rx="6" ry="22" cy="-24" transform="rotate(240)"/><ellipse rx="6" ry="22" cy="-24" transform="rotate(270)"/><ellipse rx="6" ry="22" cy="-24" transform="rotate(300)"/><ellipse rx="6" ry="22" cy="-24" transform="rotate(330)"/></g>
+   <circle r="10" fill="#d8b26a"/>
+  </symbol>
+  <symbol id="sprig" viewBox="0 0 60 120">
+   <path d="M30 118 C30 80 32 40 30 4" fill="none" stroke="#a9c0a8" stroke-width="2.5" stroke-linecap="round"/>
+   <g fill="#a9c0a8"><ellipse cx="20" cy="85" rx="10" ry="5" transform="rotate(-35 20 85)"/><ellipse cx="41" cy="65" rx="10" ry="5" transform="rotate(35 41 65)"/><ellipse cx="19" cy="45" rx="10" ry="5" transform="rotate(-35 19 45)"/><ellipse cx="41" cy="25" rx="9" ry="4.5" transform="rotate(35 41 25)"/></g>
+  </symbol>
+ </defs>
+</svg>
+
+<!-- Tree that grows and blossoms as you scroll -->
+<svg id="tree" viewBox="0 0 300 520" aria-hidden="true">
+ <path class="grow" data-s="0" data-e=".35" stroke-width="12" d="M150 520 C148 440 156 380 150 300"/>
+ <path class="grow" data-s=".15" data-e=".5" stroke-width="7" d="M151 400 C120 370 90 350 62 300"/>
+ <path class="grow" data-s=".2" data-e=".55" stroke-width="7" d="M152 360 C185 330 220 320 248 262"/>
+ <path class="grow" data-s=".3" data-e=".65" stroke-width="5" d="M150 305 C140 260 120 230 112 175"/>
+ <path class="grow" data-s=".35" data-e=".7" stroke-width="5" d="M150 300 C165 250 190 215 196 160"/>
+ <path class="grow" data-s=".4" data-e=".75" stroke-width="4" d="M62 300 C48 280 40 262 38 238"/>
+ <path class="grow" data-s=".45" data-e=".8" stroke-width="4" d="M248 262 C258 244 262 226 258 205"/>
+ <g class="b" data-t=".30"><use href="#flower" x="42" y="268" width="34" height="34"/></g>
+ <g class="b" data-t=".36"><use href="#flower" x="228" y="236" width="38" height="38"/></g>
+ <g class="b" data-t=".42"><use href="#flower" x="90" y="196" width="40" height="40"/></g>
+ <g class="b" data-t=".48"><use href="#daisy" x="176" y="140" width="40" height="40"/></g>
+ <g class="b" data-t=".54"><use href="#flower" x="18" y="218" width="36" height="36"/></g>
+ <g class="b" data-t=".60"><use href="#flower" x="238" y="184" width="36" height="36"/></g>
+ <g class="b" data-t=".66"><use href="#daisy" x="128" y="236" width="30" height="30"/></g>
+ <g class="b" data-t=".72"><use href="#flower" x="96" y="140" width="34" height="34"/></g>
+ <g class="b" data-t=".78"><use href="#flower" x="140" y="104" width="44" height="44"/></g>
+ <g class="b" data-t=".84"><use href="#daisy" x="60" y="250" width="30" height="30"/></g>
+ <g class="b" data-t=".90"><use href="#flower" x="200" y="226" width="30" height="30"/></g>
+ <g class="b" data-t=".95"><use href="#daisy" x="22" y="170" width="30" height="30"/></g>
+</svg>
+
+<nav><div class="wrap">
+ <a class="logo" href="#home">Aswathy Venu</a>
+ <ul><li><a href="#about">About</a></li><li><a href="#support">Support</a></li><li><a href="#services">Services</a></li><li><a href="#sessions">Sessions</a></li><li><a href="#contact">Contact</a></li></ul>
+ <a class="btn" href="#book">Book a session</a>
+</div></nav>
+
+<main>
+<section class="hero" id="home"><div class="wrap editorial"><div class="intro"><p class="eyebrow">CONSULTANT PSYCHOLOGIST</p><h1>A space to<br>feel <em>heard.</em></h1><p class="lead">I’m Aswathy Venu. I offer personalised psychological support in Malayalam and English, at a pace that feels right for you. You can begin with whatever is on your mind.</p><div class="actions"><a class="btn" href="#book">Book a session</a><a class="more" href="#about">Meet Aswathy</a></div></div><figure class="cover"><img src="{% static 'practice/portrait.jpg' %}" alt="Aswathy Venu seated beside a shelf of plants"><figcaption>Aswathy Venu <span>MSc Clinical Psychology</span></figcaption></figure></div></section><section id="about"><div class="wrap about">
+ <div class="aboutphoto rise"><img loading="lazy" src="{% static 'practice/about.jpg' %}" alt="Aswathy seated at a café table"></div>
+ <div class="rise">
+  <p class="note">A little about me…</p>
+  <h2>A calm, personal space to talk things through</h2>
+  <p>I am a Consultant Psychologist with experience in supporting individuals through emotional, behavioural, developmental and psychological challenges.</p><br>
+  <p>I believe that everyone deserves a safe, supportive and non-judgmental space to express themselves, understand their emotions and work towards personal growth.</p><br>
+  <p>My approach focuses on understanding individual needs and providing personalised psychological support.</p>
+  <ul class="chips"><li>Safe</li><li>Supportive</li><li>Non-judgmental</li><li>Personalised</li></ul>
+  <div class="aud" id="aud"><button type="button" id="aplay" aria-label="Play introduction">&#9654;</button><div class="mid"><b>Hear Aswathy&#8217;s introduction</b><div class="bar" id="abar"><i id="afill"></i></div></div><small id="atime">0:00</small></div>
+  <p id="anote" style="color:var(--soft);font-size:.88rem;margin-top:8px"></p>
+ </div>
+</div></section>
+
+<section class="tint" id="support"><div class="wrap">
+ <div class="rise"><p class="note">How I can help</p><h2>Areas of support</h2></div>
+ <ul class="grid rise">
+  <li>Anxiety and Stress Management</li><li>Emotional and Mood-related Concerns</li><li>Relationship and Interpersonal Difficulties</li><li>Self-Esteem and Confidence</li><li>Anger and Emotional Regulation</li><li>Behavioural Concerns</li><li>Child and Adolescent Development</li><li>Academic and Learning-related Difficulties</li><li>Personal Growth and Adjustment</li>
+ </ul>
+</div></section>
+
+<section id="services"><div class="wrap">
+ <div class="rise"><p class="note">What you can expect</p><h2>Services offered</h2></div>
+ <ul class="grid rise">
+  <li>Individual Counselling</li><li>Psychological Support</li><li>CBT &amp; Mindfulness Based Techniques<small>Core approach</small></li><li>Child and Adolescent Guidance</li><li>Parent Counselling</li><li>Behavioural Intervention</li>
+ </ul>
+</div></section>
+
+<section class="tint" id="experience"><div class="wrap">
+ <div class="rise"><p class="note">My journey</p><h2>Experience<span class="sample" id="expS" hidden>Sample details</span></h2></div>
+ <div class="stats rise" id="stats"></div>
+ <ol class="tl rise" id="tl"></ol>
+ <div class="slots rise" id="creds"></div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+ <div class="rise"><p class="note">Kind words</p><h2>Client reviews<span class="sample" id="revS" hidden>Sample reviews</span></h2></div>
+ <div class="revs rise" id="revs"></div>
+ <div class="revnote rise"><span>Reviews are shared with permission, using first names or initials only.</span><button class="btn ghost" id="revopen" type="button" aria-expanded="false" aria-controls="revform">Share your experience</button></div>
+ <div class="book" id="revform" hidden>
+  <h3>Share your experience</h3>
+  <p style="color:var(--soft)">Send your feedback directly to Aswathy on WhatsApp.</p>
+  <div class="fields" style="margin-top:16px">
+   <label>First name or initials<input id="rname" maxlength="30" autocomplete="given-name"></label>
+   <label>Rating<select id="rstars"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select></label>
+  </div>
+  <label style="margin-top:16px">Your experience<textarea id="rtext" rows="4" maxlength="400" placeholder="Please do not include any private details about your concerns."></textarea></label>
+  <label class="chk"><input type="checkbox" id="rok"> I agree to my words being shown on this website.</label>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px"><button class="btn" id="rsend" type="button">Submit review</button><button class="btn ghost" id="rcancel" type="button">Cancel</button></div>
+  <p class="status" id="rstatus" role="status"></p>
+ </div>
+</div></section>
+
+<section class="tint" id="sessions"><div class="wrap">
+ <div class="rise"><p class="note">Find your time</p><h2>Session timings</h2>
+ <p style="margin-bottom:32px;color:var(--soft)">Sessions run every day of the week, in one-hour slots. All times are in India Standard Time.</p></div>
+ <div class="slots rise">
+  <div class="card"><h3>Weekdays</h3><p>7:00 PM – 10:00 PM<br>Monday to Friday · 3 sessions each evening</p><div class="days"><i class="on">M</i><i class="on">T</i><i class="on">W</i><i class="on">T</i><i class="on">F</i><i>S</i><i>S</i></div></div>
+  <div class="card"><h3>Weekends</h3><p>9:00 AM – 5:00 PM<br>Saturday and Sunday · 8 sessions each day</p><div class="days"><i>M</i><i>T</i><i>W</i><i>T</i><i>F</i><i class="on">S</i><i class="on">S</i></div></div>
+ </div>
+
+ <div class="book rise" id="book"><h3>Arrange a session</h3><p>Choose your preferred date and time. Aswathy or Rahul will contact you to confirm availability.</p><form method="post" action="{% url 'book' %}#book">{% csrf_token %}{{ form.as_p }}<button class="btn">Send appointment request</button></form></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+ <div class="rise"><p class="note">Let's talk</p><h2>Contact for appointments</h2></div>
+ <div class="contact rise">
+  <div class="card"><p>Phone</p><b>8247221236</b><div class="btns"><a class="btn" href="tel:+918247221236">Call</a><button class="btn ghost" data-copy="8247221236">Copy number</button></div></div>
+  <div class="card"><p>Email</p><b>aswathyvenu184@gmail.com</b><div class="btns"><a class="btn" href="mailto:aswathyvenu184@gmail.com">Write an email</a><button class="btn ghost" data-copy="aswathyvenu184@gmail.com">Copy email</button></div></div>
+  <div class="card"><p>Languages</p><b>Malayalam and English</b><p>Sessions are offered in either language.</p></div>
+ </div>
+</div></section>
+</main>
+
+<footer><p>You deserve a space to be heard, understood and supported.</p><p>© 2026 Aswathy Venu · MSc Clinical Psychology · Consultant Psychologist</p></footer>
+
+<script>
+// Tree growth + blossoms follow scroll progress
+const paths=[...document.querySelectorAll('#tree .grow')],blooms=[...document.querySelectorAll('#tree .b')];
+paths.forEach(p=>p.setAttribute('pathLength',1));
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function grow(){
+ const max=document.documentElement.scrollHeight-innerHeight;
+ const p=reduce?1:(max>0?Math.min(1,scrollY/max):1);
+ paths.forEach(el=>{const s=+el.dataset.s,e=+el.dataset.e;el.style.strokeDashoffset=1-Math.max(0,Math.min(1,(p-s)/(e-s)))});
+ blooms.forEach(el=>{const t=+el.dataset.t,on=p>=t;el.style.opacity=on?1:0;el.style.transform=on?'scale(1)':'scale(.2)';el.style.transition=reduce?'none':'opacity .7s ease, transform .9s cubic-bezier(.2,.9,.3,1.3)'});
+}
+addEventListener('scroll',grow,{passive:true});addEventListener('resize',grow);grow();
+// Reveal sections and flowers once as they enter
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rise,.bloom').forEach(el=>io.observe(el));
+
+const $ = id => document.getElementById(id);
+const st = document.createElement('p');
+st.setAttribute('role','status');
+document.querySelector('#contact .wrap').append(st);
+async function copyText(t,ok){try{await navigator.clipboard.writeText(t);st.textContent=ok}catch(e){st.textContent='Copy is not available in this browser.'}}
+document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>copyText(b.dataset.copy,'Copied.'));
+// Editable content. Replace the sample items with real ones and remove sample:true.
+const AUDIO_SRC='';
+const STATS=[{n:'8',l:'Therapy sessions a day, on average'},{n:'4',l:'Languages: English, Malayalam, Tamil, Hindi'},{n:'MSc',l:'Clinical Psychology, 2024'}];
+const EXP=[
+ {when:'Present',role:'Speech Therapist (Child & Adult) & Team In-Charge',text:'Individual therapy for children and adults with speech, language and developmental needs, including articulation, language and fluency disorders. Oversee daily clinical operations, train and mentor new team members, run psychological and developmental assessments, and build individual therapy plans with clients, parents and caregivers.'},
+ {when:'Internship',role:'Psychology Intern',text:'Supervised psychological testing and assessments, therapeutic support for clients, and case documentation.'},
+ {when:'2022 – 2024',role:'MSc Clinical Psychology',org:'National Forensic Science University',text:''},
+ {when:'2019 – 2022',role:'Psychology Bachelors',text:''}
+];
+const CREDS=[
+ {h:'Published paper',t:'Internet Addiction Among Young Adults Amidst Covid-19 Pandemic (2021), with Yamuna G and Thomas S.'},
+ {h:'Workshop',t:'Cognitive Behavioral Therapy (CBT), Mentex School of Counselling and Psychotherapy.'},
+ {h:'Summit',t:'National Annual Psychology Summit 3.0: Well-being of Youth in Virtual World.'}
+];
+const REVIEWS=[];
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+$('stats').innerHTML=STATS.map(x=>`<div class="stat"><b>${esc(x.n)}</b><span>${esc(x.l)}</span></div>`).join('');
+$('tl').innerHTML=EXP.map(x=>`<li><small>${esc(x.when)}</small><h3>${esc(x.role)}</h3>${x.org||x.text?`<p>${x.org?`<b>${esc(x.org)}</b>`:''}${x.org&&x.text?'<br>':''}${esc(x.text)}</p>`:''}</li>`).join('');
+const LS='av_pending_reviews';let mine=[];try{mine=JSON.parse(localStorage.getItem(LS)||'[]')}catch(e){}
+const star=n=>'&#9733;'.repeat(n)+'&#9734;'.repeat(5-n);
+function drawRevs(){$('revs').innerHTML=REVIEWS.map(x=>({...x,s:5})).concat(mine.map(x=>({q:x.q,n:x.n,c:'',s:x.s,pending:true}))).map(x=>`<div class="card rev"><div class="stars" aria-label="${x.s} out of 5 stars">${star(x.s)}</div><q>&#8220;${esc(x.q)}&#8221;</q><div class="who"><b>${esc(x.n)}</b>${x.c?' &middot; '+esc(x.c):''}${x.pending?'<span class="sample">Awaiting approval</span>':''}</div></div>`).join('')}
+drawRevs();
+$('creds').innerHTML=CREDS.map(x=>`<div class="card"><h3>${esc(x.h)}</h3><p>${esc(x.t)}</p></div>`).join('');
+$('expS').hidden=!EXP.some(x=>x.sample);
+$('revS').hidden=!REVIEWS.some(x=>x.sample);
+const rf=$('revform'),rs=$('rstatus');
+$('revopen').onclick=()=>{rf.hidden=!rf.hidden;$('revopen').setAttribute('aria-expanded',!rf.hidden);if(!rf.hidden)$('rname').focus()};
+$('rcancel').onclick=()=>{rf.hidden=true;$('revopen').setAttribute('aria-expanded','false')};
+const rerr=(m,el)=>{rs.style.color='#b3413a';rs.textContent=m;rs.scrollIntoView({block:'center',behavior:'smooth'});if(el)el.focus()};
+$('rsend').onclick=()=>{const n=$('rname').value.trim(),q=$('rtext').value.trim(),stars=+$('rstars').value;
+ if(!n)return rerr('Please add your first name or initials.',$('rname'));
+ if(q.length<10)return rerr('Please write at least a few words about your experience.',$('rtext'));
+ if(!$('rok').checked)return rerr('Please tick the box to agree to your words being shown.',$('rok'));
+ mine.push({n,q,s:stars});try{localStorage.setItem(LS,JSON.stringify(mine))}catch(e){}
+ drawRevs();
+ const url='https://wa.me/918247221236?text='+encodeURIComponent(`Hello Aswathy, I would like to share a review for the website.\nName: ${n}\nRating: ${stars}/5\nReview: ${q}\nI agree to this being shown on the website.`);
+ const w=open(url,'_blank');
+ $('rname').value='';$('rtext').value='';$('rok').checked=false;rs.style.color='';
+ rs.innerHTML='Thank you! Your review is saved below. '+(w?'WhatsApp is opening so you can send it to Aswathy.':'')+' <a href="'+url+'" target="_blank" rel="noopener">Send it to Aswathy on WhatsApp</a>. It will appear for everyone once she approves it.';
+ $('revs').scrollIntoView({block:'center',behavior:'smooth'})};
+// Audio introduction
+const au=new Audio(),pb=$('aplay'),fmtT=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+if(AUDIO_SRC){au.src=AUDIO_SRC;au.preload='metadata'}else{pb.disabled=true;$('anote').textContent='Audio introduction coming soon.'}
+pb.onclick=()=>{au.paused?au.play():au.pause()};
+au.onplay=()=>{pb.innerHTML='&#10074;&#10074;';pb.setAttribute('aria-label','Pause introduction')};
+au.onpause=()=>{pb.innerHTML='&#9654;';pb.setAttribute('aria-label','Play introduction')};
+au.ontimeupdate=()=>{$('afill').style.width=(au.duration?au.currentTime/au.duration*100:0)+'%';$('atime').textContent=fmtT(au.currentTime)};
+au.onloadedmetadata=()=>{$('atime').textContent=fmtT(au.duration)};
+$('abar').onclick=e=>{if(!au.duration)return;const r=e.currentTarget.getBoundingClientRect();au.currentTime=(e.clientX-r.left)/r.width*au.duration};
+
+</script>
+</body>
+</html>
